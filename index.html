@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template</title>
+  <!-- alpine, htmx, water.css, select shoelace components {{{ -->
+
+  <!-- Basic styling with water.css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <style>
+body {
+  max-width: 90%; /* water.css wants it narrow */
+}
+  </style>
+
+  <!-- alpinejs -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+
+  <!-- shoelace web components {{{
+
+    details 
+
+    <sl-details summary="title">
+
+    time/date
+
+    <sl-format-number value="1000"></sl-format-number>
+    <sl-format-date date="2020-07-15T09:17:00-04:00"></sl-format-date>
+    <sl-relative-time date="2020-07-15T09:17:00-04:00"></sl-relative-time>
+
+    DIALOG
+
+    <div x-data="">
+      <sl-dialog x-ref="d" label="Dialog" class="dialog-overview">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <button @click="$refs.d.hide()" slot="footer" variant="primary">Close</button>
+      </sl-dialog>
+      <button @click="$refs.d.show()">Open Dialog</button>
+    </div>
+
+    TABS
+
+    <sl-tab-group>
+      <sl-tab slot="nav" panel="general">General</sl-tab>
+      <sl-tab slot="nav" panel="custom">Custom</sl-tab>
+      <sl-tab slot="nav" panel="advanced">Advanced</sl-tab>
+      <sl-tab slot="nav" panel="disabled" disabled>Disabled</sl-tab>
+
+      <sl-tab-panel name="general">This is the general tab panel.</sl-tab-panel>
+      <sl-tab-panel name="custom">This is the custom tab panel.</sl-tab-panel>
+      <sl-tab-panel name="advanced">This is the advanced tab panel.</sl-tab-panel>
+      <sl-tab-panel name="disabled">This is a disabled tab panel.</sl-tab-panel>
+    </sl-tab-group>
+  }}} -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/details/details.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/dialog/dialog.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/tab/tab.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/tab-group/tab-group.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/tab-panel/tab-panel.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/relative-time/relative-time.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/format-date/format-date.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.87/dist/components/format-number/format-number.js"></script>
+  <!-- }}} -->
+
+</head>
+<body>
+  <h1>Template</h1>
+
+  <button x-data="{}" @click="window.electronAPI.saveToPDF('qwer')">
+    print to pdf
+  </button>
+
+</body>
+</html>
+
